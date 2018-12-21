@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.goandroytech.www.rahisipay.Database.AddNewAlias"
+    tools:showIn="@layout/activity_add_new_alias">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        >
+        <EditText
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColorHint="#a3a3a3"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/fullname"
+            android:inputType="text"
+            android:enabled="true"
+            tools:ignore="RtlHardcoded" />
+    </android.support.design.widget.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <com.rilixtech.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:enabled="false"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/ccp"
+        >
+        <EditText
+            android:id="@+id/p_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColorHint="#a3a3a3"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/phone_number"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:enabled="true"
+            tools:ignore="RtlHardcoded,TextFields" />
+    </android.support.design.widget.TextInputLayout>
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        >
+        <EditText
+            android:id="@+id/phon_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColorHint="#a3a3a3"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/phone_number"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:enabled="true"
+            android:visibility="gone"
+            tools:ignore="RtlHardcoded,TextFields" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:id="@+id/submit"
+        android:theme="@style/Button"
+        />
+
+</LinearLayout>

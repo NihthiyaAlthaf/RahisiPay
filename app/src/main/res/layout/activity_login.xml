@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="100dp"
+            android:background="@drawable/rahisi_logo"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/customer_number"
+                    android:textColor="@color/black"
+                    android:text="255782292073"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/custom_font"
+                    android:padding="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:drawablePadding="15dp"
+                    android:drawableLeft="@drawable/mobile"
+                    android:hint="@string/user_id"
+                    android:backgroundTint="@color/black"
+                    android:textColorHint="@color/black"
+                    android:inputType="number"
+                    android:textSize="17sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/customer_pin"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:fontFamily="@font/custom_font"
+                android:layout_marginLeft="15dp"
+                android:password="true"
+                android:text="1234"
+                android:backgroundTint="@color/black"
+                android:layout_marginRight="15dp"
+                android:drawablePadding="15dp"
+                android:drawableLeft="@drawable/lock"
+                android:hint="@string/login_pin"
+                android:textColorHint="@color/black"
+                android:inputType="number"
+                android:textSize="17sp" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="30dp"
+                android:text="@string/login"
+                android:id="@+id/login"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/custom_font"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/custom_log_btn"
+                android:layout_marginTop="50dp"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="30dp"
+                android:text="Pay with Visa"
+                android:id="@+id/pay"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/custom_font"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/custom_log_btn"
+                android:layout_marginTop="50dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/forgot"
+                android:layout_gravity="center"
+                android:id="@+id/forgot"
+                android:fontFamily="@font/custom_font"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+            </LinearLayout>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

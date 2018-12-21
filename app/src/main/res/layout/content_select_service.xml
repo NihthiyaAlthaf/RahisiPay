@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SelectService"
+    tools:showIn="@layout/app_bar_select_service">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+            
+            
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:id="@+id/logo_url" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/service_name"
+                android:text="ZBC"
+                android:layout_marginTop="20dp"
+                android:textSize="24sp"
+                android:fontFamily="@font/custom_font"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/txt_service_account"
+                android:text="@string/service_acc"
+                android:layout_weight="1"
+                android:fontFamily="@font/custom_font"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/service_account"
+                android:layout_weight="1.5"
+                android:fontFamily="@font/custom_font"
+                android:text="123456"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="left"/>
+
+
+        </LinearLayout>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/custom_font"
+                android:textAllCaps="false"
+                android:id="@+id/link_unlink"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+            <Button
+                android:layout_width="250dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/custom_font"
+                android:text="@string/pay"
+                android:textAllCaps="false"
+                android:id="@+id/pay"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

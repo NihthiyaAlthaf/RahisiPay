@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ViewTransaction"
+    tools:showIn="@layout/app_bar_view_transaction">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/lin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/nature_all"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/custom_font"
+                android:padding="3dp"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+            <Spinner
+                android:id="@+id/service_all"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:fontFamily="@font/custom_font"
+                android:layout_height="40dp" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/lin11"
+            android:layout_marginLeft="3dp"
+            android:layout_below="@+id/lin"
+            android:layout_marginRight="3dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:text="@string/from"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/custom_font"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:background="@drawable/custom_transaction"
+                android:paddingLeft="15dp"
+                android:id="@+id/from_date"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1.96"
+                android:background="@color/white"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="20sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:fontFamily="@font/custom_font"
+                android:paddingLeft="15dp"
+                android:background="@drawable/custom_transaction"
+                android:text="@string/to"
+                android:layout_weight="1"
+                android:id="@+id/to_date"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/lin1"
+            android:visibility="gone"
+            android:layout_below="@+id/lin11"
+            android:background="@color/silver"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/date_time"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/txt_date"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/txt_nature"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/txt_nature"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/service_marchant"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/txt_service"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/txtamount"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:id="@+id/txt_amt"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_below="@+id/lin1"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/custom_font"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
+
+
+
+    </RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

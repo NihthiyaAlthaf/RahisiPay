@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f4f8"
+    android:id="@+id/card_view"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/mvisa_sdk_tab_padding_bottom"
+    android:paddingLeft="@dimen/mvisa_sdk_activity_horizontal_margin"
+    android:paddingRight="@dimen/mvisa_sdk_activity_horizontal_margin"
+    android:paddingTop="@dimen/mvisa_sdk_tab_padding_bottom">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/initialsView"
+        android:layout_width="@dimen/mvisa_sdk_intials_view_width"
+        android:layout_height="@dimen/mvisa_sdk_intials_view_height"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/mvisa_sdk_initials_view_margin_right"
+        android:alpha="0.2"
+        android:background="@drawable/mvisa_sdk_payee_list_item_initials_background"
+        android:gravity=    "center">
+
+        <TextView
+            android:id="@+id/tvInitials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="JM"
+            android:textColor="#ffffff"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/initialsView">
+
+        <TextView
+            android:id="@+id/payeeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joe Miller"
+            android:textColor="#1d2a59"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/payeeLastFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/payeeName"
+            android:text="Visa...1234"
+            android:textColor="#6f7099"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/update_account"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/card_art"
+            android:layout_below="@id/payeeLastFour"
+            android:textStyle="bold"
+            android:text="CHANGE"
+            android:textSize="@dimen/mvisa_sdk_medium_text_size"
+            android:textColor="@color/mvisa_sdk_orange"/>
+
+        <TextView
+            android:id="@+id/delete_account"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mvisa_sdk_id_view_margin_left"
+            android:textStyle="bold"
+            android:text="DELETE"
+            android:layout_toRightOf="@id/update_account"
+            android:layout_below="@id/payeeLastFour"
+            android:textSize="@dimen/mvisa_sdk_medium_text_size"
+            android:textColor="#ff0000"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/select_payee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/mvisa_sdk_icon_chevron_right" />
+
+</RelativeLayout>

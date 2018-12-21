@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center">
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msg"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/custom_font"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txt"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msg1"
+            android:gravity="center"
+            android:layout_below="@+id/txt"
+            android:textColor="@color/black"
+            android:fontFamily="@font/custom_font"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txt1"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:fontFamily="@font/custom_font"
+            android:textSize="18sp"
+            android:id="@+id/ok"
+            android:layout_marginTop="15dp"
+            android:textAllCaps="false"
+            android:background="@color/colorAccent"
+            android:text="@string/ok"
+            android:layout_below="@+id/txt1"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

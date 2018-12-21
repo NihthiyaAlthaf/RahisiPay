@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_account_details"
+            android:icon="@drawable/ic_account_balance_black_24dp"
+            android:title="My Account" />
+        <item
+            android:id="@+id/nav_view_transaction"
+            android:icon="@drawable/ic_account_balance_black_24dp"
+            android:title="View Transaction" />
+        <item
+            android:id="@+id/nav_services"
+            android:icon="@drawable/ic_dashboard_black_24dp"
+            android:title="Services" />
+
+        <item
+            android:id="@+id/nav_pay_qrcode"
+            android:icon="@drawable/ic_scanner_black_24dp"
+            android:title="QR Code Purchase" />
+
+        <item
+            android:id="@+id/nav_block_card"
+            android:icon="@drawable/ic_block_black_24dp"
+            android:title="Block Card" />
+        <item
+            android:id="@+id/nav_change_pin"
+            android:icon="@drawable/ic_repeat_black_24dp"
+            android:title="Change PIN" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Logout" />
+    </group>
+
+
+</menu>

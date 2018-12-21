@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center">
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/confirmation"
+            android:gravity="center"
+            android:fontFamily="@font/custom_font"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txt"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt"
+            android:text="@string/alert_text"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:fontFamily="@font/custom_font"
+            android:gravity="center"
+            android:inputType="number"
+            android:id="@+id/alert"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alert"
+            android:hint="Service Name"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/custom_font"
+            android:inputType="number"
+            android:id="@+id/service_name"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/service_name"
+            android:hint="Amount"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:fontFamily="@font/custom_font"
+            android:inputType="number"
+            android:id="@+id/amount"
+            android:layout_marginTop="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/amount"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+           >
+
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/yes"
+            android:fontFamily="@font/custom_font"
+            android:layout_marginTop="15dp"
+            android:textAllCaps="false"
+            android:background="@color/colorAccent"
+            android:text="@string/yes"
+           />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/custom_font"
+            android:id="@+id/no"
+            android:layout_marginTop="15dp"
+            android:textAllCaps="false"
+            android:background="@color/colorAccent"
+            android:text="@string/no"
+            android:layout_below="@+id/pin"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

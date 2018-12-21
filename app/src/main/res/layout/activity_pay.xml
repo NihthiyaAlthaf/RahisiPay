@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center">
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/custom_font"
+            android:text="@string/pay_for"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txt"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"/>
+
+       <LinearLayout
+           android:layout_width="300dp"
+           android:layout_height="wrap_content"
+           android:id="@+id/lin"
+           android:layout_centerHorizontal="true"
+           android:layout_below="@+id/txt"
+           android:orientation="horizontal">
+
+           <RadioButton
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:padding="10dp"
+               android:text="@string/self"
+               android:id="@+id/self"
+               android:fontFamily="@font/custom_font"
+               android:layout_weight="1"/>
+           <RadioButton
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:padding="10dp"
+               android:text="@string/Other"
+               android:fontFamily="@font/custom_font"
+               android:id="@+id/other"
+               android:layout_weight="1"/>
+       </LinearLayout>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:id="@+id/ok"
+            android:fontFamily="@font/custom_font"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:background="@color/colorAccent"
+            android:text="@string/ok"
+            android:layout_below="@+id/lin"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
