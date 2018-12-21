@@ -3,9 +3,9 @@
 buildscript {
     
     repositories {
-        flatDir {
+        /*flatDir {
             dirs 'E:/AlthafProjects/althaf/RahisiPay'
-        }
+        }*/
         google()
         jcenter()
     }
