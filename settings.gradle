@@ -1,1 +1,1 @@
-include ':app', ':ConsumerSDK-2.4.0', ':core-2.3.0', ':ConsumerSDK-2.5.1'
+include ':app',':ConsumerSDK-2.5.1'
