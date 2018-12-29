@@ -15,6 +15,7 @@
         <item name="windowNoTitle">true</item>
         <item name="android:fontFamily">@font/custom_font</item>
 
+
     </style>
     <style name="customfontstyle" parent="@android:style/TextAppearance.Small">
         <item name="android:fontFamily">@font/arial</item>

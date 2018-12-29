@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/mvisa_sdk_light_ui_active"
     android:orientation="vertical"
-    tools:context="com.goandroytech.www.rahisipay.Database.AllContacts">
+    tools:context="com.goandroytech.www.rahisipay.Pay_Visa.AllContacts">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

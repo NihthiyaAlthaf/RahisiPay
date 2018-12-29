@@ -1,4 +1,4 @@
-package com.goandroytech.www.rahisipay.Database;
+package com.goandroytech.www.rahisipay.Pay_Visa;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.text.InputFilter;
 import android.text.Spanned;
-import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkError;

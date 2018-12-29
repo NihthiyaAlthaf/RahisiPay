@@ -1,4 +1,4 @@
-package com.goandroytech.www.rahisipay.Database;
+package com.goandroytech.www.rahisipay.Pay_Visa;
 
 
 /**
@@ -26,7 +26,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -49,6 +48,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import com.goandroytech.www.rahisipay.Home;
 import com.goandroytech.www.rahisipay.Login;
 import com.goandroytech.www.rahisipay.Model.Msg;
 import com.goandroytech.www.rahisipay.R;
@@ -729,7 +729,7 @@ public class AllContacts extends AppCompatActivity implements SearchView.OnQuery
             AllContacts.this.finish();
         }*  else*/
         if (item.getItemId() == android.R.id.home){
-            Intent intent = new Intent(AllContacts.this,Login.class);
+            Intent intent = new Intent(AllContacts.this,Home.class);
             startActivity(intent);
             AllContacts.this.finish();
         }
@@ -841,7 +841,7 @@ public class AllContacts extends AppCompatActivity implements SearchView.OnQuery
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(AllContacts.this, Login.class);
+        Intent intent = new Intent(AllContacts.this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
     }

@@ -24,19 +24,19 @@ import java.util.List;
 public class Service_Adapter extends RecyclerView.Adapter<Service_Adapter.MyViewHolder> {
     Context context;
 
-    private List<Service_Model> serviceList;
+    public static List<Service_Model> serviceList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public ImageView image;
-        ImageButton star;
+        ImageView star;
         LinearLayout lin;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             image = (ImageView)view.findViewById(R.id.image);
-            star = (ImageButton)view.findViewById(R.id.star);
+            star = (ImageView)view.findViewById(R.id.star);
             lin = (LinearLayout)view.findViewById(R.id.lin);
         }
     }
@@ -59,16 +59,17 @@ public class Service_Adapter extends RecyclerView.Adapter<Service_Adapter.MyView
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Service_Model service = serviceList.get(position);
 
+        if(service.getTitle().length()>13){
+            holder.title.setTextSize(10);
+        }
         holder.title.setText(service.getTitle());
         Picasso.with(context).load(service.getUrl()+service.getImage()).into(holder.image);
 
-        holder.star.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.star.setBackgroundResource(R.drawable.yellow_star);
-            }
-        });
-
+        if (service.getSubscribed().equals("0")){
+            holder.star.setBackgroundResource(R.drawable.star);
+        } else if (service.getSubscribed().equals("1")){
+            holder.star.setBackgroundResource(R.drawable.yellow_star);
+        }
         holder.lin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +86,7 @@ public class Service_Adapter extends RecyclerView.Adapter<Service_Adapter.MyView
                     intent.putExtra("service_id",service.getService_id());
                     intent.putExtra("subscribed",service.getSubscribed());
                     intent.putExtra("subscriptionAccount",service.getSubscriptionAccount());
+                    intent.putExtra("from","single");
                     context.startActivity(intent);
                 }
 

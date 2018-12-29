@@ -1,79 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
-    >
-
-    <RelativeLayout
+    android:layout_height="255dp">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_margin="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
-
-
-
+        <ImageView
+            android:id="@+id/img_atm"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/users" />
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:fontFamily="@font/custom_font"
-            android:text="@string/pay_for"
+            android:id="@+id/textView3"
+            android:layout_width="283dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:layout_marginLeft="15dp"
-            android:id="@+id/txt"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"/>
+            android:text="Select who you pay for"
+            android:textColor="@color/colorInfo"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_atm" />
 
-       <LinearLayout
-           android:layout_width="300dp"
-           android:layout_height="wrap_content"
-           android:id="@+id/lin"
-           android:layout_centerHorizontal="true"
-           android:layout_below="@+id/txt"
-           android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-           <RadioButton
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:padding="10dp"
-               android:text="@string/self"
-               android:id="@+id/self"
-               android:fontFamily="@font/custom_font"
-               android:layout_weight="1"/>
-           <RadioButton
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:padding="10dp"
-               android:text="@string/Other"
-               android:fontFamily="@font/custom_font"
-               android:id="@+id/other"
-               android:layout_weight="1"/>
-       </LinearLayout>
+            <RadioButton
+                android:id="@+id/self"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/self"
+                app:layout_constraintHorizontal_bias="0.338"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="45dp"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:id="@+id/ok"
-            android:fontFamily="@font/custom_font"
-            android:layout_marginTop="20dp"
-            android:textAllCaps="false"
-            android:background="@color/colorAccent"
-            android:text="@string/ok"
-            android:layout_below="@+id/lin"/>
+            <RadioButton
+                android:id="@+id/other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-    </RelativeLayout>
+                android:text="@string/Other"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        </LinearLayout>
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="169dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/custom_btn_success"
+        android:text="@string/ok"
+        android:textColor="@color/colorSuccess"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
-</RelativeLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

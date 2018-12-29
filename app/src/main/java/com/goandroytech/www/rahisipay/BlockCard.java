@@ -1,12 +1,15 @@
 package com.goandroytech.www.rahisipay;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,9 +21,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.goandroytech.www.rahisipay.Dialog.ChangePIN_Dialog;
 import com.goandroytech.www.rahisipay.Dialog.PIN;
+import com.goandroytech.www.rahisipay.apicalls.API;
+import com.google.zxing.integration.android.IntentIntegrator;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.goandroytech.www.rahisipay.apicalls.API.BASE_URL;
+import static com.goandroytech.www.rahisipay.apicalls.API.BLOCK_CARD_SERVICE_ID;
+import static com.goandroytech.www.rahisipay.apicalls.API.PHONE;
 
 public class BlockCard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,6 +53,16 @@ public class BlockCard extends AppCompatActivity
     SharedPreferences sp;
     String MyPref = "mysharedpref";
     String VALIDATE = "val";
+    String customer_name;
+    String NAME ="name";
+    String MOBILE = "mobile";
+    String get_Mobile;
+    public static String ID ="id";
+    String user_pin_number;
+    RequestQueue queue;
+    String CARD_STATUS ="card_state";
+    String get_card_status;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,16 +72,43 @@ public class BlockCard extends AppCompatActivity
         sp = getSharedPreferences(MyPref,MODE_PRIVATE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        queue = Volley.newRequestQueue(BlockCard.this);
+        sp = getSharedPreferences(MyPref, MODE_PRIVATE);
 
+        customer_name = sp.getString(NAME, null);
+        get_Mobile = sp.getString(MOBILE,null);
+        get_card_status = sp.getString(CARD_STATUS,null);
+        LayoutInflater factory = LayoutInflater.from(BlockCard.this);
+
+        final View textEntryView = factory.inflate(R.layout.activity_confirm, null);
+
+        //final TextView msg = (TextView)textEntryView.findViewById(R.id.msg);
+
+     //   msg.setText("Do you want to block the card?");
+        final AlertDialog.Builder alert = new AlertDialog.Builder(BlockCard.this);
+        alert.setCancelable(false);
+        alert.setView(textEntryView).setPositiveButton("Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,
+                                        int whichButton) {
+                        dialog.dismiss();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+        alert.show();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (reason.getText().toString().equals("")){
-                    reason.setError("Enter Reason for Block");
+                user_pin_number = reason.getText().toString();
+                if (user_pin_number.equals("")){
+                    reason.setError("Enter PIN");
                 } else {
-                    saveLoginPrefrence();
-                    PIN pin = new PIN(getApplication());
-                    pin.show();
+                   Block_Card();
                 }
             }
         });
@@ -100,7 +160,13 @@ public class BlockCard extends AppCompatActivity
             startActivity(intent);
 
         }  else if (id == R.id.nav_pay_qrcode) {
-
+            IntentIntegrator integrator = new IntentIntegrator(BlockCard.this);
+            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+            integrator.setPrompt("Scan");
+            integrator.setCameraId(0);
+            integrator.setBeepEnabled(false);
+            integrator.setBarcodeImageEnabled(false);
+            integrator.initiateScan();
         } else if (id == R.id.nav_block_card) {
 
         } else if (id == R.id.nav_change_pin) {
@@ -141,4 +207,67 @@ public class BlockCard extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void Block_Card() {
+        final ProgressDialog progressDialog = new ProgressDialog(BlockCard.this);
+        progressDialog.setMessage("Blocking ...");
+        progressDialog.show();
+        StringRequest postRequest = new StringRequest(Request.Method.POST, BASE_URL,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Log.d("Response", response);
+                        try {
+                            JSONObject json_res = new JSONObject(response);
+                            JSONObject jsonObject = json_res.getJSONObject("response");
+                            String get_code = jsonObject.getString("code");
+                            String get_message = jsonObject.getString("message");
+                            String get_description = jsonObject.getString("description");
+
+                            if (get_code.equals("200")) {
+                                progressDialog.dismiss();
+                                Toast.makeText(BlockCard.this,get_description,Toast.LENGTH_SHORT).show();
+                            } else {
+                                progressDialog.dismiss();
+                                Toast.makeText(BlockCard.this,get_description,Toast.LENGTH_SHORT).show();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        progressDialog.dismiss();
+                        Toast.makeText(BlockCard.this,error.toString(),Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+        )
+        {
+
+            @Override
+            public String getBodyContentType() {
+                return "application/x-www-form-urlencoded";
+            }
+
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put(PHONE, get_Mobile);
+                params.put(API.PIN, user_pin_number);
+                params.put(API.SERVICE_ID, BLOCK_CARD_SERVICE_ID);
+                return params;
+            }
+        };
+        queue.add(postRequest);
+    }
+
 }

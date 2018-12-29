@@ -11,7 +11,7 @@
             android:title="My Account" />
         <item
             android:id="@+id/nav_view_transaction"
-            android:icon="@drawable/ic_account_balance_black_24dp"
+            android:icon="@drawable/transaction"
             android:title="View Transaction" />
         <item
             android:id="@+id/nav_services"
@@ -20,7 +20,7 @@
 
         <item
             android:id="@+id/nav_pay_qrcode"
-            android:icon="@drawable/ic_scanner_black_24dp"
+            android:icon="@drawable/ic_qrcode_black_24dp"
             android:title="QR Code Purchase" />
 
         <item

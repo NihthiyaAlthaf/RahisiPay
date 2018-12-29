@@ -10,9 +10,15 @@
     <color name="black">#000</color>
     <color name="silver">#C0C0C0</color>
     <color name="dark_silver">#9b9b9b</color>
+    <color name="dark_silver1">#878787</color>
     <color name="silver_text">#bec1c5</color>
     <color name="green">#008000</color>
     <color name="primaryColor">#26314c</color>
     <color name="dark_green">#008000</color>
+    <color name="dialog_ok">#00d29e</color>
+    <color name="grey">#666666</color>
+    <color name="dialog_cancel">#ff132f</color>
+
+    <color name="vpi__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
 
 </resources>

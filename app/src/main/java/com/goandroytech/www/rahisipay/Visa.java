@@ -18,10 +18,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.goandroytech.www.rahisipay.Database.CreatemPin;
-import com.goandroytech.www.rahisipay.Database.UhuruDataSource;
+import com.goandroytech.www.rahisipay.Connection.ConnectivityDetector;
+import com.goandroytech.www.rahisipay.Pay_Visa.CreatemPin;
+import com.goandroytech.www.rahisipay.Pay_Visa.UhuruDataSource;
 import com.goandroytech.www.rahisipay.apicalls.API;
-import com.google.gson.JsonObject;
 import com.visa.mvisa.sdk.MVisaSDK;
 import com.visa.mvisa.sdk.MVisaSDKImpl;
 import com.visa.mvisa.sdk.activities.BasePayMerchantActivity;
@@ -47,7 +47,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static com.goandroytech.www.rahisipay.Database.Action.getJulianDate;
+import static com.goandroytech.www.rahisipay.Pay_Visa.Action.getJulianDate;
 
 public class Visa extends Activity {
     MVisaConfig mVisaConfig;
@@ -68,11 +68,17 @@ public class Visa extends Activity {
     PayFriendRequest payFriendRequest;
     UhuruDataSource db;
     int primary_Account =1;
+    String MyPref = "mysharedpref";
+    SharedPreferences sp;
+    String get_Mobile;
+    String MOBILE = "phone";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_select_service);
-
+        sp = getSharedPreferences(MyPref, MODE_PRIVATE);
+        get_Mobile = sp.getString(MOBILE,null);
         db = new UhuruDataSource(Visa.this);
         db.accountDetails("101508000017","4515280000000024");
         Drawable image = this.getResources().getDrawable(R.drawable.mvisa_sdk_network_logo_visa_blue);
@@ -469,16 +475,21 @@ public class Visa extends Activity {
         String rrn="";
 
         rrn=getJulianDate()+stan;
-
-
         return rrn;
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
-        Intent intent = new Intent(Visa.this,Login.class);
-        startActivity(intent);
+        if (get_Mobile.equals("")){
+            Visa.this.finish();
+            Intent intent = new Intent(Visa.this,Login.class);
+            startActivity(intent);
+        } else {
+            Visa.this.finish();
+            Intent intent = new Intent(Visa.this,Home.class);
+            startActivity(intent);
+        }
+
     }
 }

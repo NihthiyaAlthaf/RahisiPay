@@ -1,4 +1,4 @@
-package com.goandroytech.www.rahisipay.Database;
+package com.goandroytech.www.rahisipay.Pay_Visa;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -55,7 +55,34 @@ public class UhuruDataSource {
         uhuruHelper.close();
 
     }
+    //Retrieve Transaction list
+    public ArrayList<Msg> getTransactions(String status) {
+        ArrayList<Msg> transactions = new ArrayList<>();
+        String[] columns={"amount","agent_name","transaction_time","ret_no","id"};
 
+        this.open();
+        cursor = db.query("tbl_transaction_history",columns,"status="+status,null,null,null,"transaction_time DESC");
+
+        //looping through all rows and adding to list
+        if (cursor.moveToFirst())
+        {
+            do
+            {
+                Msg msg = new Msg();
+                msg.setAmount(cursor.getString(0));
+                msg.setAgent_name(cursor.getString(1));
+                msg.setTransaction_time(cursor.getString(2));
+                msg.setApproval_code(cursor.getString(3));
+                msg.setBin(cursor.getString(4));
+                transactions.add(msg);
+            }
+            while (cursor.moveToNext());
+        }
+
+        this.close();
+
+        return transactions;
+    }
     //Check alias if exist
     public int friendAliasCheck(String phone_number)
     {
@@ -770,7 +797,7 @@ public class UhuruDataSource {
 //            while (cursor.moveToNext());
 //        }
 //
-//        this.close();
+//        this.error();
 //
 //        return consumerAlias;
 //    }
@@ -957,7 +984,7 @@ public class UhuruDataSource {
 //            while (cursor.moveToNext());
 //        }
 //
-//        this.close();
+//        this.error();
 //
 //        return transactions;
 //    }

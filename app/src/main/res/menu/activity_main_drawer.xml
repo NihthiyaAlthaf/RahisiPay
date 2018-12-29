@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="@string/transactions"
+            />
+        <!--<item-->
+            <!--android:id="@+id/nav_gallery"-->
+            <!--android:title="Add Friend Identifier"-->
+            <!--/>-->
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="@string/manage_accounts"
+            />
+        <item
+            android:id="@+id/nav_manage"
+            android:title="@string/change_mpin"
+            />
+        <item
+            android:id="@+id/visa_number"
+            android:title="@string/get_visa_number"
+            />
+        <item
+            android:id="@+id/logout"
+            android:title="@string/logout"
+            />
+    </group>
+
+</menu>

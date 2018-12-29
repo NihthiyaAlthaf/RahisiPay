@@ -25,19 +25,19 @@ import java.util.List;
 public class Child_Adapter extends RecyclerView.Adapter<Child_Adapter.MyViewHolder> {
     Context context;
 
-    private List<Child> childList;
+    public static List<Child> childList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public ImageView image;
-        ImageButton star;
+        ImageView star;
         LinearLayout lin;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             image = (ImageView)view.findViewById(R.id.image);
-            star = (ImageButton)view.findViewById(R.id.star);
+            star = (ImageView)view.findViewById(R.id.star);
             lin = (LinearLayout)view.findViewById(R.id.lin);
         }
     }
@@ -50,7 +50,7 @@ public class Child_Adapter extends RecyclerView.Adapter<Child_Adapter.MyViewHold
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_service__adapter, parent, false);
+                .inflate(R.layout.activity_child_adapter, parent, false);
         context = parent.getContext();
 
         return new MyViewHolder(itemView);
@@ -64,12 +64,11 @@ public class Child_Adapter extends RecyclerView.Adapter<Child_Adapter.MyViewHold
             Picasso.with(context).load(child.getUrl() + child.getImage()).into(holder.image);
 
 
-            holder.star.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    holder.star.setBackgroundResource(R.drawable.yellow_star);
-                }
-            });
+        if (child.getSubscribe().equals("0")){
+            holder.star.setBackgroundResource(R.drawable.star);
+        } else if (child.getSubscribe().equals("1")){
+            holder.star.setBackgroundResource(R.drawable.yellow_star);
+        }
 
             holder.lin.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -80,6 +79,7 @@ public class Child_Adapter extends RecyclerView.Adapter<Child_Adapter.MyViewHold
                     intent.putExtra("service_id",child.getService_id());
                     intent.putExtra("subscribed",child.getSubscribe());
                     intent.putExtra("subscriptionAccount",child.getSubscriptionAccount());
+                    intent.putExtra("from","group");
                     context.startActivity(intent);
                 }
 

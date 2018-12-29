@@ -1,83 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
+    android:layout_height="350dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center"
-    >
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/img_atm"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reset" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="214dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="Change PIN "
+        android:textColor="@color/colorError"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_atm" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+
+
+
+
+
+    <EditText
+        android:id="@+id/current_pin"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_margin="10dp"
-        android:gravity="center">
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/current_pin"
+        android:inputType="numberPassword"
+        />
 
+    <EditText
+        android:id="@+id/new_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/new_pin"
+        android:inputType="numberPassword"
+        />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/colorAccent"
-            android:text="@string/change_pin"
-            android:gravity="center"
-            android:fontFamily="@font/custom_font"
-            android:textSize="17sp"
-            android:id="@+id/title"
-            android:textColor="@color/white"/>
+    <EditText
+        android:id="@+id/con_new_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/con_new_pin"
+        android:inputType="numberPassword" />
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="178dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/custom_btn_success"
+        android:text="@string/ok"
+        android:textColor="@color/colorSuccess"
+        android:textStyle="bold"
+        />
+</LinearLayout>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/title"
-            android:hint="@string/current_pin"
-            android:gravity="center"
-            android:layout_marginLeft="15dp"
-            android:inputType="number"
-            android:fontFamily="@font/custom_font"
-            android:id="@+id/current_pin"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/current_pin"
-            android:hint="@string/new_pin"
-            android:gravity="center"
-            android:layout_marginLeft="15dp"
-            android:fontFamily="@font/custom_font"
-            android:inputType="number"
-            android:id="@+id/new_pin"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/new_pin"
-            android:fontFamily="@font/custom_font"
-            android:hint="@string/con_new_pin"
-            android:gravity="center"
-            android:layout_marginLeft="15dp"
-            android:inputType="number"
-            android:id="@+id/con_new_pin"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"/>
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="45dp"
-            android:fontFamily="@font/custom_font"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:id="@+id/ok"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorAccent"
-            android:text="@string/ok"
-            android:layout_below="@+id/con_new_pin"/>
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

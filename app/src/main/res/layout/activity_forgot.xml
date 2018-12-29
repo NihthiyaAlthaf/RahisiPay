@@ -1,43 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Forgot"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
-    >
+    android:layout_height="wrap_content">
 
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
-        android:hint="@string/account_no"
-        android:paddingLeft="14dp"
-        android:fontFamily="@font/custom_font"
-        android:inputType="number"
-        android:id="@+id/account_no"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/custom_btn1" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_atm"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/reset" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="214dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="Forgot Password "
+            android:textColor="@color/colorError"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_atm" />
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="Please contact us on 0800 000 006 or visit our offices to reset your password"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:layout_width="200dp"
+        android:id="@+id/btn_ok"
+        android:layout_width="169dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:fontFamily="@font/custom_font"
-        android:background="@drawable/custom_log_btn"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textAllCaps="false"
-        android:layout_marginTop="60dp"
-        android:id="@+id/reset_pin"
-        android:text="@string/reset_pin"/>
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/custom_btn_success"
+        android:text="@string/ok"
+        android:textColor="@color/colorSuccess"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_message"
+        app:layout_constraintVertical_bias="0.272" />
 
 
 
 
-</LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

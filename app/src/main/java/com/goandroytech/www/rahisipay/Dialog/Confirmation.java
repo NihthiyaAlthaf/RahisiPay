@@ -19,7 +19,7 @@ public class Confirmation extends Dialog implements
         View.OnClickListener {
 
     public Dialog d;
-    public Button yes,no;
+   // public Button yes,no;
     TextView service_name,amount;
     static SharedPreferences sp;
     public String SHARED_PREF_NAME = "mysharedpref";
@@ -40,10 +40,10 @@ public class Confirmation extends Dialog implements
         service_name = (TextView)findViewById(R.id.service_name);
         amount = (TextView)findViewById(R.id.amount);
         sp = context.getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
-        yes = (Button) findViewById(R.id.yes);
-        no = (Button) findViewById(R.id.no);
-        yes.setOnClickListener(this);
-        no.setOnClickListener(this);
+//        yes = (Button) findViewById(R.id.yes);
+//        no = (Button) findViewById(R.id.no);
+//        yes.setOnClickListener(this);
+//        no.setOnClickListener(this);
 
 
     }
@@ -51,15 +51,15 @@ public class Confirmation extends Dialog implements
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.yes:
-                saveLoginPrefrence();
-                PIN pin = new PIN(getContext());
-                pin.show();
-                dismiss();
-                break;
-            case R.id.no:
-                dismiss();
-                break;
+//            case R.id.yes:
+//                saveLoginPrefrence();
+//                PIN pin = new PIN(getContext());
+//                pin.show();
+//                dismiss();
+//                break;
+//            case R.id.no:
+//                dismiss();
+//                break;
             default:
                 break;
         }

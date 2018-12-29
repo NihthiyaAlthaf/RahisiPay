@@ -1,14 +1,11 @@
-package com.goandroytech.www.rahisipay.Database;
+package com.goandroytech.www.rahisipay.Pay_Visa;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -26,8 +23,6 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import static android.transition.Fade.IN;
 
 public class DigitalReceipt extends AppCompatActivity implements View.OnClickListener {
 

@@ -1,12 +1,15 @@
 package com.goandroytech.www.rahisipay;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.goandroytech.www.rahisipay.Connection.ConnectivityDetector;
+import com.goandroytech.www.rahisipay.Database.DBManager;
 import com.goandroytech.www.rahisipay.Model.Child;
 import com.goandroytech.www.rahisipay.Model.Service_Model;
 
@@ -27,9 +31,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.goandroytech.www.rahisipay.apicalls.API.BASE_URL;
@@ -55,6 +62,7 @@ public class Login extends Activity {
     public  String SHARED_PREF_NAME = "mysharedpref";
     String PHONE ="phone";
     String NAME ="name";
+    String CARD_STATUS ="card_state";
     String MOBILE ="mobile";
     String ID ="id";
     String ACCOUNT ="account";
@@ -66,6 +74,7 @@ public class Login extends Activity {
     String get_account;
     String get_balance;
     String get_card;
+    String get_card_state;
     String get_date;
     String get_transaction_number;
     String get_description;
@@ -73,10 +82,14 @@ public class Login extends Activity {
     String get_logo_url;
     Typeface type;
     Button pay;
+    DBManager dbManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        dbManager = new DBManager(Login.this);
         input_number =(EditText)findViewById(R.id.customer_number);
         input_pin =(EditText)findViewById(R.id.customer_pin);
         btn_login =(Button)findViewById(R.id.login);
@@ -100,8 +113,24 @@ public class Login extends Activity {
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (Login.this,Forgot.class);
-                startActivity(intent);
+                LayoutInflater factory = LayoutInflater.from(Login.this);
+                final View textEntryView = factory.inflate(R.layout.activity_forgot, null);
+                Button btn_ok = (Button)textEntryView.findViewById(R.id.btn_ok);
+                final AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+                alert.setCancelable(true);
+                final AlertDialog alertDialog = alert.setView(textEntryView).create();
+
+                btn_ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+
+                               }
+                });
+
+
+
+                alertDialog.show();
 
             }
         });
@@ -123,7 +152,7 @@ public class Login extends Activity {
                     array_subscriptionAccounte.clear();
                     userLogin();
                 } else {
-                    connectivityDetector.showAlertDialog(Login.this, "Connection Error!", "No internet connection");
+                    connectivityDetector.showAlertDialog(Login.this,"Connection Error", "No internet connection");
 
                 }
             }
@@ -159,12 +188,19 @@ public class Login extends Activity {
                                 get_account = jsonObject2.getString("account");
                                 get_balance = jsonObject2.getString("balance");
                                 get_card = jsonObject2.getString("card");
+                                get_card_state = jsonObject2.getString("card_state");
 
-                                JSONObject jsonObject3 = jsonObject1.getJSONObject("last_transaction");
-                                get_date = jsonObject3.getString("date");
-                                get_transaction_number = jsonObject3.getString("transaction_number");
-                                get_description = jsonObject3.getString("description");
-                                get_amount = jsonObject3.getString("amount");
+                                try{
+                                    JSONObject jsonObject3 = jsonObject1.getJSONObject("last_transaction");
+                                    if(jsonObject3.length()>0){
+                                        get_date = jsonObject3.getString("date");
+                                        get_transaction_number = jsonObject3.getString("transaction_number");
+                                        get_description = jsonObject3.getString("description");
+                                        get_amount = jsonObject3.getString("amount");
+                                    }
+                                } catch (Exception e){
+
+                                }
 
                                 JSONArray jsonArray = json_res.getJSONArray("services");
 
@@ -178,6 +214,15 @@ public class Login extends Activity {
                                     get_subscriptionAccount = jsonObject4.getString("subscriptionAccount");
 
                                     if (get_parent.equals("0")){
+                                        array_service_id.add(get_service_id);
+                                        array_image.add(get_image);
+                                        array_service_name.add(get_service_name);
+                                        array_logo_url.add(get_logo_url);
+                                        array_parent.add(get_parent);
+                                        array_subscribe.add(get_subscribed);
+                                        array_subscriptionAccounte.add(get_subscriptionAccount);
+
+                                    //    dbManager.insert(get_service_id,get_service_name,get_parent,get_image,get_subscribed,get_subscriptionAccount,get_logo_url);
                                         Service_Model service = new Service_Model(get_service_id,get_image, get_service_name,get_logo_url,get_parent,get_subscribed,get_subscriptionAccount);
                                         serviceList.add(service);
                                     } else {
@@ -188,25 +233,15 @@ public class Login extends Activity {
                                         array_parent.add(get_parent);
                                         array_subscribe.add(get_subscribed);
                                         array_subscriptionAccounte.add(get_subscriptionAccount);
-
                                         //   Child child = new Child(get_service_id,get_image,get_service_name,get_logo_url,get_parent);
                                         //  childList.add(child);
                                     }
-
-
                                 }
-                                Toast.makeText(Login.this,"Login Success!",Toast.LENGTH_SHORT).show();
-
-
-                                //  MDToast mdToast = MDToast.makeText(Login.this,"Login Success!",Toast.LENGTH_SHORT,MDToast.TYPE_SUCCESS);
-                                // mdToast.show();
                                 progressDialog.dismiss();
                                 saveLoginPrefrence();
-
                                 finish();
-                                Intent intent = new Intent(Login.this, MyAccount.class);
+                                Intent intent = new Intent(Login.this, Home.class);
                                 startActivity(intent);
-
                             } else {
                                 progressDialog.dismiss();
                                 Toast.makeText(Login.this,"Login Failed!",Toast.LENGTH_SHORT).show();
@@ -258,9 +293,12 @@ public class Login extends Activity {
         editor.putString(MOBILE, get_mobile);
         editor.putString(NAME, get_name);
         editor.putString(ACCOUNT, get_id);
+        editor.putString(CARD_STATUS, get_card_state);
         editor.putString(ID, get_account);
         editor.putString(PIN,input_pin.getText().toString() );
         editor.apply();
         editor.commit();
     }
+
+
 }

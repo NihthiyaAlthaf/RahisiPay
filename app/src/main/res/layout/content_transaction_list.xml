@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.goandroytech.www.rahisipay.Pay_Visa.TransactionList"
+    tools:showIn="@layout/activity_transaction_list">
+
+    <!--Begin -->
+
+
+    <!-- <TextView
+         android:id="@+id/consumer_name"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center"
+         android:layout_marginTop="10dp"
+         android:paddingLeft="10dp"
+         android:text="John Doe"
+         android:textColor="@color/primaryColorDark"
+         android:textSize="16dp" />
+
+     <TextView
+         android:id="@+id/account"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center"
+         android:paddingLeft="0dp"
+         android:text="Visa...2020"
+         android:layout_below="@+id/consumer_name"
+         android:textColor="@color/primaryColorDark"
+         android:layout_centerHorizontal="true"
+         android:textSize="16dp" />
+
+     <TextView
+         android:id="@+id/amount"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:gravity="left"
+         android:paddingLeft="0dp"
+         android:text="Tzs. 72,340"
+         android:padding="15dp"
+         android:layout_alignParentRight="true"
+         android:layout_alignParentEnd="true"
+         android:textColor="@color/primaryColorDark"
+         android:layout_centerHorizontal="true"
+         android:textSize="16dp"
+         android:layout_below="@+id/consumer_name" /> -->
+
+    <!--End -->
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:id="@+id/transaction_listed"
+        android:text="@string/recent_transactions"
+        android:layout_gravity="center"
+        android:textColor="@color/mvisa_sdk_flash_on_black"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            />
+
+    </FrameLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/navigation" />
+
+</LinearLayout>

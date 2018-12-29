@@ -52,14 +52,32 @@ public class ChildService extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         childAdapter = new Child_Adapter(childList);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(childAdapter);
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        childList.clear();
+        for (int i =0;i<Login.array_parent.size();i++) {
+            Log.e("print", array_parent.get(i));
+            if (get_parent_service_id.equals(Login.array_parent.get(i))) {
+                Child child = new Child(array_service_id.get(i), array_image.get(i), array_service_name.get(i), array_logo_url.get(i), array_parent.get(i), array_subscribe.get(i), array_subscriptionAccounte.get(i));
+                childList.add(child);
 
+            }
+        }
+        childAdapter = new Child_Adapter(childList);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(childAdapter);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
         return true;
     }
+
+
 }

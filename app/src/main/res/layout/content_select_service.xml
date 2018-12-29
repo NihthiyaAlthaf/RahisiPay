@@ -16,14 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="50dp"
             android:orientation="vertical">
             
             
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
                 android:id="@+id/logo_url" />
 
             <TextView
@@ -31,8 +32,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/service_name"
                 android:text="ZBC"
-                android:layout_marginTop="20dp"
-                android:textSize="24sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="18sp"
                 android:fontFamily="@font/custom_font"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -40,15 +42,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:id="@+id/txt_service_account"
                 android:text="@string/service_acc"
                 android:layout_weight="1"
                 android:fontFamily="@font/custom_font"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textColor="@color/black"
                 android:gravity="center"/>
             <TextView
@@ -57,34 +60,148 @@
                 android:id="@+id/service_account"
                 android:layout_weight="1.5"
                 android:fontFamily="@font/custom_font"
-                android:text="123456"
-                android:textSize="15sp"
+                android:text="null"
+                android:textSize="14sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:gravity="left"/>
 
 
+
+
+
         </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_box"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:fontFamily="@font/custom_font"
+                android:text="@string/last_transaction"
+                android:background="@color/silver_text"
+                android:textColor="@color/darkorange"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:fontFamily="@font/custom_font"
+                        android:text="@string/desc"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/nature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/custom_font"
+                        android:paddingLeft="10dp"
+                        android:text="null"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:fontFamily="@font/custom_font"
+                    android:text="Date :"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/custom_font"
+                    android:paddingLeft="10dp"
+                    android:text="null"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:fontFamily="@font/custom_font"
+                    android:text="@string/amount"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/custom_font"
+                    android:paddingLeft="10dp"
+                    android:text="null"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            </LinearLayout>
 
             <Button
                 android:layout_width="250dp"
                 android:layout_marginTop="20dp"
                 android:layout_height="40dp"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:layout_marginLeft="20dp"
+                android:text="@string/link"
+                android:textSize="15sp"
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/custom_font"
                 android:textAllCaps="false"
-                android:id="@+id/link_unlink"
+                android:id="@+id/link"
                 android:gravity="center"
                 android:layout_gravity="center"/>
             <Button
                 android:layout_width="250dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_height="40dp"
                 android:textColor="@color/white"
-                android:textSize="17sp"
-                android:background="@color/colorPrimary"
+                android:textSize="15sp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/dark_green"
                 android:fontFamily="@font/custom_font"
                 android:text="@string/pay"
                 android:textAllCaps="false"
@@ -92,7 +209,24 @@
                 android:gravity="center"
                 android:layout_gravity="center"/>
 
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:textColor="@color/red"
+                android:layout_marginLeft="20dp"
+                android:textSize="15sp"
+                android:text="@string/unlink"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/custom_font"
+                android:textAllCaps="false"
+                android:id="@+id/unlink"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+
         </LinearLayout>
+
+
+
 
 
     </RelativeLayout>

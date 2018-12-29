@@ -26,7 +26,7 @@
                 android:layout_weight="1"
                 android:layout_height="40dp" />
             <Spinner
-                android:id="@+id/service_all"
+                android:id="@+id/status_all"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:padding="3dp"

@@ -45,7 +45,6 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
-
     <application
         android:name=".fonts.CustomFontApp"
         android:allowBackup="true"
@@ -56,6 +55,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@drawable/rahisi_logo"
         android:supportsRtl="true"
+        android:screenOrientation="portrait"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".Splash">
@@ -65,53 +65,92 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" />
+        <activity android:name=".Login"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Home"
             android:label="@string/service"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Adapter.Service_Adapter" />
-        <activity android:name=".Subscribe" />
-        <activity android:name=".Adapter.Subscribe_Adapter" />
-        <activity android:name=".CustomDialog" />
-        <activity android:name=".Dialog.ChangePIN_Dialog" />
-        <activity android:name=".Dialog.Reset_PIN" />
-        <activity android:name=".Dialog.ResetCode" />
-        <activity android:name=".Dialog.Pay_Dialog" />
-        <activity android:name=".Forgot" />
+        <activity android:name=".Adapter.Service_Adapter"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Subscribe"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Adapter.Subscribe_Adapter"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CustomDialog"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.ChangePIN_Dialog"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.Reset_PIN"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.ResetCode"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.Pay_Dialog"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Forgot"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MyAccount"
             android:label="@string/title_activity_my_account1"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ViewTransaction"
             android:label="@string/transaction_list"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Adapter.TransactionAdapter" />
         <activity
             android:name=".SelectService"
             android:label="@string/title_activity_select_service"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Dialog.Account_Num" />
-        <activity android:name=".Dialog.PIN" />
-        <activity android:name=".Dialog.Pay" />
-        <activity android:name=".Dialog.Confirmation" />
+        <activity android:name=".Dialog.Account_Num"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.PIN"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.Pay"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.Confirmation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".BlockCard"
             android:label="@string/title_activity_block_card"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Dialog.BlockCode" />
-        <activity android:name=".Dialog.Message" />
-        <activity android:name=".ChildService" />
-        <activity android:name=".Dialog.TransactionDialog"></activity>
-        <activity android:name=".Visa"></activity>
-        <activity android:name=".Database.NotificationHome"></activity>
-        <activity android:name=".Database.DigitalReceipt"></activity>
-        <activity android:name=".Database.DigitalReceiptTwo"></activity>
-        <activity android:name=".Database.CreatemPin"></activity>
-        <activity android:name=".Database.PayFriend"></activity>
-        <activity android:name=".Database.AddNewAlias"></activity>
-        <activity android:name=".Database.AllContacts"></activity>
+        <activity android:name=".Dialog.BlockCode"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.Message"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ChildService"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Dialog.TransactionDialog"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Visa"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pay_Visa.NotificationHome"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pay_Visa.DigitalReceipt"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pay_Visa.DigitalReceiptTwo"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pay_Visa.CreatemPin"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pay_Visa.PayFriend"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pay_Visa.AddNewAlias"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pay_Visa.AllContacts"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Card"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Receipt"
+            android:label="@string/receipt"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PayScan"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -1,166 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
-    >
-
+    android:layout_width="293dp"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_margin="10dp"
         android:orientation="vertical"
         android:gravity="center">
-
-
+        <ImageView
+            android:id="@+id/img_atm"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/pricetag"
+            tools:layout_editor_absoluteX="167dp"
+            tools:layout_editor_absoluteY="15dp" />
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/colorAccent"
-            android:gravity="center"
-            android:fontFamily="@font/custom_font"
-            android:textSize="17sp"
             android:id="@+id/title_nature"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:id="@+id/amount"
-            android:text="5000"
-            android:paddingRight="10dp"
-            android:gravity="right"
-            android:textColor="@color/green"
-            android:layout_marginTop="25dp"
-            android:fontFamily="@font/custom_font"
-            android:layout_weight="1.8"
-            android:textStyle="bold"
-            android:paddingLeft="10dp"
-           />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:layout_below="@+id/title_nature"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:textColor="@color/black"
-                android:fontFamily="@font/custom_font"
-                android:layout_weight="1.8"
-                android:textStyle="bold"
-                android:paddingLeft="10dp"
-                android:text="@string/desc"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/custom_font"
-                android:id="@+id/desc"
-                android:gravity="center_vertical"
-                android:layout_weight="1.2"
-                android:paddingLeft="10dp"
-                android:text=""/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:layout_below="@+id/title_nature"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:textColor="@color/black"
-                android:fontFamily="@font/custom_font"
-                android:layout_weight="1.8"
-                android:textStyle="bold"
-                android:paddingLeft="10dp"
-                android:text="@string/date_time"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/custom_font"
-                android:id="@+id/date"
-                android:gravity="center_vertical"
-                android:layout_weight="1.2"
-                android:paddingLeft="10dp"
-                android:text=""/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:layout_below="@+id/title_nature"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:textColor="@color/black"
-                android:fontFamily="@font/custom_font"
-                android:layout_weight="1.8"
-                android:textStyle="bold"
-                android:paddingLeft="10dp"
-                android:text="@string/charges"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/custom_font"
-                android:id="@+id/charges"
-                android:gravity="center_vertical"
-                android:layout_weight="1.2"
-                android:paddingLeft="10dp"
-                android:text=""/>
-        </LinearLayout>
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:fontFamily="@font/custom_font"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:id="@+id/ok"
-            android:layout_marginTop="15dp"
-            android:background="@color/colorAccent"
-            android:text="@string/ok"
-            android:layout_below="@+id/con_new_pin"/>
+            android:text="Service Payment"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="70dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_desc_title"
+                android:layout_width="131dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="@string/desc"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.153"
+                app:layout_constraintStart_toStartOf="parent"
+               />
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="fill_vertical"
+                android:text="Zanzibar Cable"
+                app:layout_constraintEnd_toEndOf="parent"
+               />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_date_title"
+                android:layout_width="131dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="@string/date_time"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.222"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc_title" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="fill_vertical"
+                android:text="12-12-2018 "
+                android:textSize="14sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_amount_title"
+                android:layout_width="131dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="@string/amount"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.222"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date_title" />
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/checkbox_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="25,000.00 TZS" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_amount_title2"
+                android:layout_width="131dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="@string/charges"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.222"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_amount_title" />
+
+            <TextView
+                android:id="@+id/charges"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="400.00 TZS" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_amount_title3"
+                android:layout_width="131dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="VAT:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_amount_title2" />
+
+
+            <TextView
+                android:id="@+id/vat"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorSuccess"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="90.00 TZS" />
+
+        </LinearLayout>
+
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/custom_btn_success"
+        android:text="@string/ok"
+        android:textColor="@color/colorSuccess"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+
+
+
+
 
     </LinearLayout>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

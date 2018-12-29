@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/payeeListCard"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/origination"
+                android:text="Transactions:"
+                android:layout_alignParentTop="true"
+                android:textSize="14sp"
+                android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/transaction_time"
+                android:text="Sent at 13:20"
+                android:textSize="14sp"
+                android:layout_below="@+id/origination"
+                android:textColor="@color/mvisa_sdk_flash_on_black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/amount"
+                android:text="Amount"
+                android:textSize="14sp"
+                android:textColor="@color/vpi__bright_foreground_disabled_holo_dark"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/total_sales"-->
+                <!--android:text="Tzs.72,340"-->
+                <!--android:textSize="20sp"-->
+                <!--android:layout_below="@+id/amount"-->
+                <!--android:textColor="@color/mvisa_sdk_flash_on_black"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--/>-->
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

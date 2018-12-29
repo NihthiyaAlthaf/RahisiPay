@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.goandroytech.www.rahisipay.Database.AddNewAlias"
+    tools:context="com.goandroytech.www.rahisipay.Pay_Visa.AddNewAlias"
     tools:showIn="@layout/activity_add_new_alias">
 
     <android.support.design.widget.TextInputLayout

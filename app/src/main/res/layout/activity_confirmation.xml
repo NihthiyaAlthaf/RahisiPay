@@ -1,116 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
-    >
+    android:layout_height="280dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_margin="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:gravity="center">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
 
-
-
-        <TextView
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/img_atm"
+            android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="@string/confirmation"
-            android:gravity="center"
-            android:fontFamily="@font/custom_font"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:layout_marginLeft="15dp"
-            android:id="@+id/txt"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_success"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:background="@drawable/paying" />
+    <TextView
+        android:id="@+id/tv_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="Ready to Pay Now?"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="70dp"
+        tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="177dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text="You are paying for "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_success" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt"
-            android:text="@string/alert_text"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/black"
-            android:fontFamily="@font/custom_font"
-            android:gravity="center"
-            android:inputType="number"
-            android:id="@+id/alert"
-            android:layout_marginTop="20dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/alert"
-            android:hint="Service Name"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:fontFamily="@font/custom_font"
-            android:inputType="number"
             android:id="@+id/service_name"
-            android:layout_marginTop="20dp"/>
+            android:layout_width="288dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="Water Payment"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="123dp"
+            tools:ignore="MissingConstraints" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/service_name"
-            android:hint="Amount"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:fontFamily="@font/custom_font"
-            android:inputType="number"
             android:id="@+id/amount"
-            android:layout_marginTop="20dp"/>
-
-        <RelativeLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/amount"
-            android:layout_marginBottom="30dp"
-            android:layout_centerHorizontal="true"
-           >
-
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_width="290dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:inputType="number"
+            android:layout_marginRight="8dp"
             android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
+            android:textColor="@color/checkbox_color"
             android:textSize="18sp"
-            android:layout_alignParentLeft="true"
-            android:id="@+id/yes"
-            android:fontFamily="@font/custom_font"
-            android:layout_marginTop="15dp"
-            android:textAllCaps="false"
-            android:background="@color/colorAccent"
-            android:text="@string/yes"
+            android:textStyle="bold"
+
            />
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:fontFamily="@font/custom_font"
-            android:id="@+id/no"
-            android:layout_marginTop="15dp"
-            android:textAllCaps="false"
-            android:background="@color/colorAccent"
-            android:text="@string/no"
-            android:layout_below="@+id/pin"/>
-        </RelativeLayout>
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/custom_btn_success"
+                android:text="@string/yes"
+                android:textColor="@color/colorSuccess"
+                android:textStyle="bold"
+               />
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/custom_btn_cancel"
+                android:text="@string/no"
+                android:textColor="@color/colorError"
+                />
 
-</RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

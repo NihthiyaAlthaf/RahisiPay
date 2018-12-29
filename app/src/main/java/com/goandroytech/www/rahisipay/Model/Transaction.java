@@ -7,13 +7,34 @@ public class Transaction {
     String amount;
     String charge;
     String nature;
+    String status_id;
+    String status;
 
-    public Transaction(String get_date, String get_description, String get_amount, String get_charge, String get_nature) {
+    public String getStatus_id() {
+        return status_id;
+    }
+
+    public void setStatus_id(String status_id) {
+        this.status_id = status_id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Transaction(String get_date, String get_description, String get_amount, String get_charge, String get_nature, String get_status_id, String get_status) {
         this.date = get_date;
         this.description = get_description;
+
         this.amount = get_amount;
         this.charge = get_charge;
         this.nature = get_nature;
+        this.status_id = get_status_id;
+        this.status = get_status;
     }
 
     public String getDate() {
